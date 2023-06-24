@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="C:\Users\DELL\Desktop\abhinav\web development\registration form\style.css">
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get form input values
+      var fullName = document.getElementById('fullname').value;
+      var email = document.getElementById('email').value;
+      var webLanguage = document.getElementById('web-language').value;
+      var favoriteColor = document.getElementById('favorite-color').value;
+      var branch = document.getElementById('branch').value;
+
+      // Display the collected values in a <div>
+      var outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = "<strong>Full Name:</strong> " + fullName +
+                            "<br><strong>Email:</strong> " + email +
+                            "<br><strong>Favorite Web Language:</strong> " + webLanguage +
+                            "<br><strong>Favorite Color:</strong> " + favoriteColor +
+                            "<br><strong>Branch:</strong> " + branch;
+    }
+  </script>
+  <title>Abhi's Registration Form</title>
+</head>
+<body>
+  <h1>Registration Form</h1>
+  <form onsubmit="handleSubmit(event)">
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="web-language">Choose Your Favorite Web Language:</label>
+    <select id="web-language" name="web-language">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="javascript">JavaScript</option>
+    </select>
+
+    <label for="favorite-color">Favorite Color:</label>
+    <select id="favorite-color" name="favorite-color">
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="yellow">Yellow</option>
+    </select>
+
+    <label for="branch">Select Branch:</label>
+    <select id="branch" name="branch">
+      <option value="computer-science">Computer Science</option>
+      <option value="electronics">Electronics</option>
+      <option value="mechanical">Mechanical</option>
+      <option value="civil">Civil</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="output"></div>
+</body>
+</html>
